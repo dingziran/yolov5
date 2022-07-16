@@ -643,8 +643,8 @@ class LoadImagesAndLabels(Dataset):
                     labels[:, 1] = 1 - labels[:, 1]
 
             # Cutouts
-            # labels = cutout(img, labels, p=0.5)
-            # nl = len(labels)  # update after cutout
+            labels = cutout(img, labels, p=0.2)
+            nl = len(labels)  # update after cutout
 
         labels_out = torch.zeros((nl, 6))
         if nl:
